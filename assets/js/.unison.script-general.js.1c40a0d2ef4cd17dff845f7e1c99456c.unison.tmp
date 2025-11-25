@@ -1,0 +1,3 @@
+jQuery(document).ready(function($) {
+   // console.log('General script loaded');
+});

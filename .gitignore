@@ -1,0 +1,19 @@
+# macOS
+.DS_Store
+
+# WordPress local config/secrets
+wp-config.php
+
+# Environment files
+.env
+.env.*
+
+# Logs
+*.log
+php_errors.log
+
+# Composer artifacts (keep vendor/ tracked by default)
+composer.phar
+
+# Node (if present)
+node_modules/

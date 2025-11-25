@@ -1,0 +1,79 @@
+<?php
+/**
+ * @package PriceTable
+ *
+ */
+
+ namespace SanasanaInit\Seo;
+
+ use SanasanaInit\General\BaseController;
+ use WP_Query;
+
+class SeoOverrideController extends BaseController
+{    
+	public function register() {
+        add_action('wp_head', [$this, 'inject_custom_seo']);
+		
+    }
+	
+	
+	
+	public function inject_custom_seo() {
+        global $post;
+        if (!$post instanceof \WP_Post) {
+            return;
+        }
+
+        $slug = $post->post_name;
+
+        // Lista completa de slugs y SEO data
+        $seo_data = [
+            'salud-en-equilibrio' => [
+                'title' => 'Programa Salud en Equilibrio – SanaSana',
+                'description' => 'Disfruta del programa “Salud en Equilibrio”: valoración médica esencial, guía personalizada, monitoreo constante y ahorros exclusivos. Bienestar proactivo.',
+            ],
+            'vida-activa' => [
+                'title' => 'Programa Vida Activa – SanaSana',
+                'description' => 'Activa tu salud con “Vida Activa”: plan preventivo con ejercicio guiado, apoyo especializado, monitoreo constante y energía renovada.',
+            ],
+            'control-total' => [
+                'title' => 'Programa Control Total – SanaSana',
+                'description' => 'Toma el control total de tu salud con este plan: valoración médica avanzada, seguimiento personalizado y herramientas digitales para resultados duraderos.',
+            ],
+            'mama-bebe' => [
+                'title' => 'Programa Mamá & Bebé – SanaSana',
+                'description' => 'Cuida de ti y tu bebé con nuestro plan “Mamá & Bebé”: valoración prenatal/postnatal, seguimiento personalizado y recursos para un vínculo saludable.',
+            ],
+            'vitalidad-dorada' => [
+                'title' => 'Programa Vitalidad Dorada – SanaSana',
+                'description' => 'Revitaliza tu vida con “Vitalidad Dorada”: valoración médica especializada, plan de bienestar integral, seguimiento personalizado y energía renovada.',
+            ],
+            'balanced-health' => [
+                'title' => 'Balanced Health Program – SanaSana',
+                'description' => 'Transform your wellness with Balanced Health: full medical evaluation, personalized health guide, ongoing monitoring and exclusive savings.',
+            ],
+            'active-life' => [
+                'title' => 'Active Life Program – SanaSana',
+                'description' => 'Boost your health with Active Life: guided exercise plan, expert support, continuous monitoring and renewed energy.',
+            ],
+            'total-control' => [
+                'title' => 'Total Control Program – SanaSana',
+                'description' => 'Take total control of your health with this program: advanced medical evaluation, personalized tracking, and digital tools for lasting results.',
+            ],
+            'mom-baby' => [
+                'title' => 'Mom & Baby Program – SanaSana',
+                'description' => 'Support your journey with the Mom & Baby Program: prenatal and postnatal checkups, personalized care, and resources for a healthy bond.',
+            ],
+            'golden-vitality' => [
+                'title' => 'Golden Vitality Program – SanaSana',
+                'description' => 'Revitalize your life with the Golden Vitality Program: specialized medical evaluation, full wellness plan, personalized support and renewed energy.',
+            ],
+        ];
+
+        // Si el slug está en la lista, inyecta
+        if (array_key_exists($slug, $seo_data)) {
+            echo '<meta name="description" content="' . esc_attr($seo_data[$slug]['description']) . '">' . "\n";
+        }
+    }
+    
+}

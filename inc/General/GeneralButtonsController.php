@@ -1,0 +1,152 @@
+<?php
+/**
+ * @package Sanasana
+ * Reseñas Controller
+ */
+
+namespace SanasanaInit\General;
+
+class GeneralButtonsController extends BaseController
+{
+    public function register()
+    {
+
+		add_shortcode('ingresa_button', [$this, 'render_ingresa_button']);
+		add_shortcode('afiliate_home_hero_buttons', [$this, 'render_afiliate_home_hero_buttons']);
+		add_shortcode('conoce_mas_button', [$this, 'render_conoce_mas_button']);
+		
+
+		// Register shortcodes for the affiliate buttons
+		add_shortcode('affiliate_button_single_redirection', [$this, 'render_affiliate_button_single_redirection']);
+		add_shortcode('affiliate_button_plan_details_top', [$this, 'render_affiliate_button_plan_details_top']);
+		add_shortcode('affiliate_button_footer', [$this, 'render_affiliate_button_footer']);
+		
+		//Valoration
+		add_shortcode('schedule_button_single_redirection', [$this, 'render_schedule_button_single_redirection']);
+    }
+
+	public function render_ingresa_button()
+     {
+         ob_start();
+         $login_url = $this->get_login_url();
+         ?>
+        <div class="custom-menu-button ingresa-menu-button">
+			<a class="custom-menu-button-link" style="text-decoration: none;" href="<?php echo esc_url($login_url); ?>"><?php _e('Ingresá', 'sanasana'); ?></a>
+		</div>
+         <?php
+         return ob_get_clean();
+     }
+
+		
+	public function render_afiliate_home_hero_buttons()
+     {
+         ob_start();
+		 $affiliation_url = $this->get_affiliation_url();
+         ?>
+		<div class="hero-container-button">
+			<div class="custom-menu-button hero-ingresa-menu-button">
+				<a class="custom-menu-button-link" style="text-decoration: none;" href="<?php echo esc_url($affiliation_url); ?>">
+					<?php echo esc_html__('Afiliate', 'sanasana'); ?>
+				</a>
+			</div> <div class="custom-menu-button hero-programs-menu-button">
+				<?php 
+$anchor = (get_locale() == 'es_ES') ? '#programas' : '#programs'; 
+?>
+				<a class="custom-menu-button-link" style="text-decoration: none;" href="<?php echo $anchor; ?>"><?php echo esc_html__('Programas', 'sanasana'); ?></a>
+			</div>
+		</div>
+			
+	<?php
+         return ob_get_clean();
+     }
+	
+	// Afiiliate buttons with redirection to the frontend app
+	public function render_affiliate_button_single_redirection()
+     {
+         ob_start();
+		 $affiliation_url = $this->get_affiliation_url();
+         ?>
+		 <div class="affiliate-single-redirection-button-container">
+			 <div class="custom-menu-button">
+				<a class="price-button" style="text-decoration: none;" href="<?php echo esc_url($affiliation_url); ?>">
+					<?php echo esc_html__('Afiliate', 'sanasana'); ?>
+				</a>
+			</div>
+		 </div>
+         <?php
+         return ob_get_clean();
+     }
+	
+	//Schedule
+	public function render_schedule_button_single_redirection()
+     {
+         ob_start();
+		 $login_url = $this->get_login_url();
+         ?>
+		 <div class="affiliate-single-redirection-button-container">
+			 <div class="custom-menu-button">
+				<a class="price-button" style="text-decoration: none;" href="<?php echo esc_url($login_url); ?>">
+					<?php echo esc_html__('Agendá ahora', 'valoracion-medica'); ?>
+				</a>
+			</div>
+		 </div>
+         <?php
+         return ob_get_clean();
+     }
+	
+	public function render_affiliate_button_plan_details_top()
+     {
+         ob_start();
+		 $post = $this->get_post_from_current_url('programa'); 
+		 if (!$post) return ''; 
+		 $plan_crm_id = get_post_meta($post->ID, '_price_table_plan_crm_id', true);
+		 $affiliation_url = $this->get_affiliation_url($plan_crm_id);
+         ?>
+		 <div class="affiliate-plan-details-top-button-container">
+			 <div class="custom-menu-button ingresa-menu-button">
+				<a class="price-button" style="text-decoration: none;" href="<?php echo esc_url($affiliation_url); ?>">
+					<?php echo esc_html__('Afiliate', 'sanasana'); ?>
+				</a>
+			</div>
+		 </div>
+         <?php
+         return ob_get_clean();
+     }
+	
+	 public function render_affiliate_button_footer()
+	 {
+		ob_start();
+		$post = $this->get_post_from_current_url('price'); 
+		$plan_crm_id = null;
+		if ($post) {
+			$plan_crm_id = get_post_meta($post->ID, '_price_table_plan_crm_id', true);
+		}
+		$affiliation_url = $this->get_affiliation_url($plan_crm_id);
+		?>
+		<div class="affiliate-footer-button-container">
+			<div class="custom-menu-button ingresa-menu-button">
+				<a class="price-button" style="text-decoration: none;" href="<?php echo esc_url($affiliation_url); ?>">
+					<?php echo esc_html__('Afiliate', 'sanasana'); ?>
+				</a>
+			</div>
+		</div>
+		<?php
+		return ob_get_clean();
+	 }
+	
+	public function render_conoce_mas_button()
+     {
+         ob_start();
+		 $affiliation_url = $this->get_affiliation_url();
+         ?>
+		 <div class="affiliate-single-redirection-button-container">
+			 <div class="custom-menu-button ">
+				<a class="price-button full-button" style="text-decoration: none;" href="<?php echo esc_url($affiliation_url); ?>">
+					<?php echo esc_html__('¡Quiero afiliarme!', 'conoce-mas'); ?>
+				</a>
+			</div>
+		 </div>
+         <?php
+         return ob_get_clean();
+     }
+}

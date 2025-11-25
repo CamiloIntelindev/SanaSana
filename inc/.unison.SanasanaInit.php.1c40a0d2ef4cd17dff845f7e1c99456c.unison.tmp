@@ -1,0 +1,52 @@
+<?php
+/**
+* @package  Sanasana
+ * 
+ * Init plugin
+ */
+namespace SanasanaInit;
+
+final class SanasanaInit {
+
+    public static function get_services() {
+        return [
+            General\BaseController::class,
+            General\EnqueueController::class, // Add this line
+			General\ResenasController::class, // Add this line
+            General\GeneralButtonsController::class, // Add this line
+            //Form section
+            Form\FormController::class, // Add this line
+            //PriceTable section
+            PriceTable\PriceTableController::class,// Add this line
+            PriceTable\PriceTableMetaBox::class, // Add this line
+            PriceTable\PriceTableShortcode::class, // Add this line
+            PriceTable\PriceTableSettings::class, // Add this line
+           //TabsTable section
+           TabsTable\TabsTableController::class, // Add this line
+           TabsTable\TabsTableMetaBox::class, // Add this line
+           TabsTable\TabsTableShortcode::class, // Add this line
+           TabsTable\FaqTabsTableMetaBox::class, // Add this line
+           //Questionnaire section
+           
+            Questionnaire\QuestionnaireController::class, // Add this line    
+            Questionnaire\QuestionnaireMetaBox::class, // Add this line
+            Questionnaire\QuestionnaireShortcode::class, // Add this line
+            //
+            Programs\ProgramsController::class, // Add this line
+			
+        ];
+    }
+
+    public static function register_services() {
+        foreach (self::get_services() as $class) {
+            $service = self::instantiate($class);
+            if (method_exists($service, 'register')) {
+                $service->register();
+            }
+        }
+    }
+
+    private static function instantiate($class) {
+        return new $class();
+    }
+}

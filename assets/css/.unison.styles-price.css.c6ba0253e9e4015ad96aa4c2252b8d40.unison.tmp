@@ -1,0 +1,2407 @@
+/* ====================================================
+Variables Globales (fusionadas de ambos archivos)
+==================================================== */
+:root {
+	--title_green: #97B24D;
+	--title_rose: #BF8573;
+	--title_blue: #738BBF;
+	--title_purple: #C69FC7;
+	--title_golden: rgb(202 183 107);
+	--colors-base-primary: #F9DE42;
+	--colors-common-secundary-500: #000000;
+	--colors-common-danger-400: #E84C5B;
+}
+
+.ingresa-menu-button {
+	width: 180px !important;
+	height: 48px !important;
+	border-radius: 8px;
+	background: #5166EC;	
+}
+.ingresa-menu-button > .custom-menu-button-link {
+	color: #ffffff;
+	padding-right: 24px;
+	padding-left: 24px;
+	display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+	cursor: pointer;
+}
+.ingresa-menu-button > .custom-menu-button-link:hover,
+.btn-yellow:hover{
+	background: #E3CA3C !important;
+	color: #000000 !important;
+	border-radius: 8px;
+}
+.hero-container-button
+ {
+    display: flex;
+    gap: 20px;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.hero-container-button > .custom-menu-button{
+	width: 180px !important;
+	height: 48px !important;
+	border-radius: 8px;
+}
+.hero-ingresa-menu-button > a.custom-menu-button-link{
+	width: 100%;
+    height: 100%;
+	background: #F9DE42;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: Poppins;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 24px;
+	border-radius: 8px;
+	color: #000000 !important;
+}
+.hero-ingresa-menu-button > a.custom-menu-button-link:hover{
+	background: transparent;
+	border: solid 2px #F9DE42;
+	color: #F9DE42 !important;
+}
+.hero-programs-menu-button> a.custom-menu-button-link{
+	width: 100%;
+    height: 100%;
+	background: transparent;
+	border: solid 2px #F9DE42;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: Poppins;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 24px;
+	border-radius: 8px;
+	color: #F9DE42 !important;
+}
+.hero-programs-menu-button> a.custom-menu-button-link:hover{
+	background: #F9DE42;
+	color: #000000 !important;
+}
+/* ====================================================
+Contenedor del Slider y Botones de Navegación
+==================================================== */
+.price-slider-container {
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.price-prev,
+.price-next {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	background: rgba(0, 0, 0, 0.1);
+	color: #000;
+	border: none;
+	cursor: pointer;
+	width: 40px;
+	height: 40px;
+	border-radius: 100px;
+	z-index: 10;
+	/*transition: background 0.3s;*/
+}
+
+.price-prev {
+	left: 0;
+	background-image: url('/wp-content/plugins/sanasana/assets/images/left-arrow.svg');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 40px;
+}
+
+.price-next {
+	right: 0;
+	background-image: url('/wp-content/plugins/sanasana/assets/images/right-arrow.svg');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 40px;
+}
+
+/* ====================================================
+Contenedor y Tarjeta de Precio
+==================================================== */
+.price-container {
+	display: flex;
+	gap: 22px;
+	overflow-x: auto;
+	scroll-behavior: smooth;
+	scrollbar-width: none; /* Firefox */
+	-ms-overflow-style: none; /* IE/Edge */
+	padding: 20px 0;
+	max-width: 1350px;
+}
+
+/* Ocultar scrollbar en Chrome/Safari */
+.price-container::-webkit-scrollbar {
+	display: none;
+}
+
+/* 
+Nota: Se han fusionado dos versiones de .price-card.
+- En price-cards.css se usaba: min-height: 700px;
+- En styles.css se usaba: height: 628px;
+Puedes elegir la opción que mejor se adapte a tu diseño.
+*/
+
+.price-card {
+	background: white;
+	border-radius: 8px;
+	padding: 35px 20px;
+	text-align: center;
+	width: 24%;
+	max-width: 320px;
+	min-width: 320px;
+	/* Opción 1: Alto fijo (styles.css) */
+	/* height: 628px; */
+	/* Opción 2: Alto mínimo flexible (price-cards.css) */
+	min-height: 700px;
+	box-shadow: 0px 4px 6px -1px rgba(0, 0, 0, 0.10),
+		0px 2px 4px -2px rgba(0, 0, 0, 0.10);
+	position: relative;
+}
+.price-card-nosotros{
+	min-height: 350px;
+}
+.view_details-link{
+	font-weight: 700;
+}
+.price-title {
+	font-family: "Moranga Light", Verdana, Arial, sans-serif;
+	font-size: 26px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+}
+
+.sanasana-accordion-col-item:nth-child(2) > h2.sanasana-accordion-col-item_title,
+.price-card:nth-child(1) .price-title {
+	color: var(--title_green);
+}
+
+.sanasana-accordion-col-item:nth-child(3) > h2.sanasana-accordion-col-item_title,
+.price-card:nth-child(2) .price-title {
+	color: var(--title_rose);
+}
+.sanasana-accordion-col-item:nth-child(4) > h2.sanasana-accordion-col-item_title,
+.price-card:nth-child(3) .price-title {
+	color: var(--title_blue);
+}
+.sanasana-accordion-col-item:nth-child(5) > h2.sanasana-accordion-col-item_title,
+.price-card:nth-child(4) .price-title {
+	color: var(--title_purple);
+}
+.sanasana-accordion-col-item:nth-child(6) > h2.sanasana-accordion-col-item_title,
+.price-card:nth-child(5) .price-title {
+	color: var(--title_golden);
+}
+
+
+/* ====================================================
+Animaciones para el Valor
+==================================================== */
+@keyframes change_value_in {
+	0% { color: #f0f0f0; }
+	100% { color: #000000; }
+}
+
+@keyframes change_value_out {
+	0% { color: #f0f0f0; }
+	100% { color: #000000; }
+}
+
+.price-value {
+	margin-bottom: 10px;
+	color: var(--colors-common-secundary-500);
+	text-align: center;
+	font-family: "Moranga Light", Verdana, Arial, sans-serif;
+	font-size: 72px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 72px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	/*transition: color 1.2s ease;*/
+}
+/*nav menu*/
+
+
+.animate-in {
+	animation: change_value_in 1.2s forwards;
+}
+
+.animate-out {
+	animation: change_value_out 1.2s forwards;
+}
+
+.price-value > span {
+	color: var(--colors-common-secundary-500);
+	text-align: center;
+	font-family: Moranga;
+	font-size: 36px;
+	font-style: normal;
+	font-weight: 300;
+	line-height: 40px;
+}
+
+/* ====================================================
+Descripción, Precio Anual y Botón
+==================================================== */
+.price-decription {
+	color: #000;
+	text-align: center;
+	font-family: Poppins, sans-serif;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 16px;
+	min-height: 70px;
+}
+
+.price-annual {
+	color: var(--colors-common-danger-400);
+	text-align: center;
+	font-family: Poppins, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 16px;
+	margin-bottom: 15px;
+	margin-top: -15px;
+}
+
+.price-button {
+	display: flex;
+	width: 180px;
+	height: 48px;
+	padding: 0 24px;
+	justify-content: center;
+	align-items: center;
+	gap: 8px;
+	border-radius: 8px;
+	background: var(--colors-base-primary);
+	/* Nota: La variable --colors-base-secondary-500 se usa para el color del texto. */
+	color: var(--colors-base-secondary-500);
+	font-family: Poppins, sans-serif;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 24px;
+	margin: auto;
+	text-decoration: none !important;
+}
+
+/* ====================================================
+Lista de Beneficios y Detalles Adicionales
+==================================================== */
+.price-benefits {
+	list-style: none;
+	padding-left: 0 !important;
+	margin: 0;
+}
+
+.price-list-details li {
+	font-size: 18px !important;
+	line-height: 28px !important;
+	align-items: center !important;
+}
+
+.price-benefits li {
+	text-align: left;
+	color: #000;
+	font-family: Poppins, sans-serif;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 20px;
+	display: flex;
+	align-items: flex-start;
+	gap: 8px;
+	margin-bottom: 10px;
+}
+
+.price-benefits li::before {
+	content: '';
+	display: inline-block;
+	width: 25px;
+	height: 20px;
+	background-image: url('/wp-content/plugins/sanasana/assets/images/check-sanasana.svg');
+	background-size: contain;
+	background-repeat: no-repeat;
+	flex-shrink: 0;
+}
+.view_details_container {
+	position: absolute;
+	bottom: 30px;
+	left: 0;
+	right: 0;
+	margin: inherit;
+}
+.program-benefit-title{
+	font-family: Moranga Light;
+	font-weight: 600 !important;
+	font-size: 36px;
+	line-height: 40px;
+	letter-spacing: 0%;
+	vertical-align: middle;
+	margin-bottom: 20px;
+	padding: 20px 0;
+	text-align: left;
+}
+.program-benefit-block {
+	background: #ffffff;
+	padding: 20px 110px 30px 110px;
+	margin: 20px 0;
+	border-radius: 10px;
+}
+
+.program-benefit-block > ul.price-benefits {
+	margin-left: 20px ;
+}
+.program-benefit-block > ul.price-benefits > li{
+	margin-bottom: 20px !important;
+}
+/* ====================================================
+Recomendado
+==================================================== */
+.recommended {
+	border: 3px solid #5166EC;
+}
+
+.recommended-label {
+	position: absolute;
+	top: -18px;
+	left: 50%;
+	transform: translateX(-50%);
+	background: #4a6fe9;
+	color: white;
+	font-size: 16px;
+	border-radius: 50px;
+	display: inline-flex;
+	height: 32px;
+	min-height: 32px;
+	max-height: 32px;
+	padding: 0 8px;
+	justify-content: center;
+	align-items: center;
+	flex-shrink: 0;
+}
+
+/* ====================================================
+Botón Toggle para Precio Anual
+==================================================== */
+.price-annual-button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 40px;
+	margin-bottom: 20px;
+	width: 325px;
+	margin: auto;
+}
+.price-annual-button-programs {
+    flex-direction: column;
+}
+
+.toggle-container {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	font-size: 16px;
+}
+
+.toggle {
+	width: 50px;
+	height: 25px;
+	background-color: var(--colors-base-primary);
+	border-radius: 25px;
+	position: relative;
+	cursor: pointer;
+	/*transition: background-color 0.3s ease;*/
+}
+
+.toggle .slider {
+	width: 20px;
+	height: 20px;
+	background-color: #ffffff;
+	border-radius: 50%;
+	position: absolute;
+	top: 50%;
+	left: 4px;
+	transform: translateY(-50%);
+	/*transition: left 0.3s ease;*/
+}
+
+.toggle.active {
+	background-color: #4a6fe9;
+}
+
+.toggle.active .slider {
+	left: 26px;
+}
+
+.toggle-label {
+	color: #000;
+	text-align: center;
+	font-family: Poppins, sans-serif;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+}
+
+.discount {
+	/* Se usa la variable con fallback */
+	color: var(--colors-common-success-700, #7D978A);
+	font-family: Poppins, sans-serif;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+}
+
+/* ====================================================
+Contact form
+==================================================== */
+.contact-form_sanasana > #contact-form > input{
+	height: 46px;
+	width: 100%;
+	border-radius: 12px;
+}
+.contact-form_sanasana > #contact-form > input::placeholder,
+.contact-form_sanasana > #contact-form > textarea::placeholder {
+	color: #5166EC;  /* Color del texto */
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 16px;
+	font-family: Poppins, sans-serif;
+	opacity: 1;  /* Controla la opacidad */
+}
+
+.contact-form_sanasana > #contact-form > input:focus::placeholder,
+.contact-form_sanasana > #contact-form > textarea:focus::placeholder {
+	color: #5166EC;  /* Color del texto */
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 16px;
+	font-family: Poppins, sans-serif;
+	opacity: 1;  /* Controla la opacidad */
+}
+.contact-form_sanasana > #contact-form > input::-webkit-input-placeholder,
+.contact-form_sanasana > #contact-form > textarea::-webkit-input-placeholder {
+	color: #5166EC;  /* Color del texto */
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 16px;
+	font-family: Poppins, sans-serif;
+	opacity: 1;  /* Controla la opacidad */
+}
+
+.contact-form_sanasana > #contact-form > input::-moz-placeholder,
+.contact-form_sanasana > #contact-form > textarea::-moz-placeholder {
+	color: #5166EC;  /* Color del texto */
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 16px;
+	font-family: Poppins, sans-serif;
+	opacity: 1;  /* Controla la opacidad */
+}
+
+.contact-form_sanasana > #contact-form > input:-ms-input-placeholder,
+.contact-form_sanasana > #contact-form > textarea:-ms-input-placeholder {
+	color: #5166EC;  /* Color del texto */
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 16px;
+	font-family: Poppins, sans-serif;
+	opacity: 1;  /* Controla la opacidad */
+}
+
+.contact-form_sanasana > #contact-form > input::-ms-input-placeholder,
+.contact-form_sanasana > #contact-form > textarea::-ms-input-placeholder {
+	color: #5166EC;  /* Color del texto */
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 16px;
+	font-family: Poppins, sans-serif;
+	opacity: 1;  /* Controla la opacidad */
+}
+.contact-form_sanasana > #contact-form > textarea{
+	width: 100%;
+	height: 120px;
+	border-radius: 12px;
+}
+.contact-form_sanasana > #contact-form > input,
+.contact-form_sanasana > #contact-form > textarea{
+	margin: 8px 0 !important;
+}
+.hidden{
+	display: none;
+}
+
+input#phone {
+    border: none;
+    padding-left: 20px;
+}
+.contact-form_sanasana > #contact-form > button[type="submit"]{
+	width: 180px;
+	height: 48px;
+	border-radius: 8px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #000000;
+	background: #F9DE42;
+}
+/* ====================================================
+Animaciones del Header (Sticky)
+==================================================== */
+/*
+.ast-primary-sticky-header-active .main-header-bar-wrap .main-header-bar,
+.ast-primary-sticky-enabled .ast-main-header-wrap .main-header-bar.ast-header-sticked {
+background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.1));
+}*/
+
+@keyframes scroll_nav_in {
+	0% {
+		background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.1));
+		border-bottom: none;
+	}
+	100% {
+		background: #ffffff;
+		border-bottom: none;
+	}
+}
+
+@keyframes scroll_nav_out {
+	0% {
+		background: #ffffff;
+		border-bottom: none;
+	}
+	100% {
+		background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.1));
+		border-bottom: none;
+	}
+}
+
+.animate-nav-in {
+	border-bottom: none;
+	background: #5166EC !important;
+	/*transition: background 0.9s;*/
+	/*animation: scroll_nav_in 0.9s forwards;*/
+}
+
+.animate-nav-out {
+	border-bottom: none;
+	background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.1));
+	/*animation: scroll_nav_out 0.9s forwards;
+	/*transition: background 0.1s;*/
+}
+.animate-nav{
+	border-bottom: none;
+	background: #F9F8F5 !important;
+	z-index: 99;
+}
+
+/* ====================================================
+Botón "Ingresa" (Header custom)
+==================================================== */
+.ast-header-html-1 > .ast-header-html > .ast-builder-html-element .custom-menu-button > a.custom-menu-button-link {
+	background: #5166EC;
+	border-radius: 8px;
+	/*transition: background .9s;*/
+	width: 100%;
+	height: 48px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.animate-nav-in > .site-primary-header-wrap > .ast-builder-grid-row > .site-header-primary-section-right > .ast-header-html-1 > .ast-header-html > .ast-builder-html-element .custom-menu-button >  a.custom-menu-button-link {
+	background: #F9DE42;
+	color: #000000 !important;
+	width: 180px;
+	height: 48px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 8px;
+	/*transition: background .9s;*/
+}
+
+.menu-link{
+	justify-content: center;
+}
+.ast-builder-grid-row {
+	display: flex !important;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+.ast-builder-grid-row > .site-header-primary-section-left{
+	width: 15%;
+}
+.ast-builder-grid-row > .site-header-primary-section-center{
+	width: 65%;
+}
+.ast-builder-grid-row > .site-header-primary-section-center > .ast-builder-menu-1,
+.ast-builder-grid-row > .site-header-primary-section-center > .ast-builder-menu-1 > .ast-main-header-bar-alignment,
+.ast-builder-grid-row > .site-header-primary-section-center > .ast-builder-menu-1 > .ast-main-header-bar-alignment > .main-header-bar-navigation,
+.ast-builder-grid-row > .site-header-primary-section-center > .ast-builder-menu-1 > .ast-main-header-bar-alignment > .main-header-bar-navigation > nav.site-navigation,
+.ast-builder-grid-row > .site-header-primary-section-center > .ast-builder-menu-1 > .ast-main-header-bar-alignment > .main-header-bar-navigation > nav.site-navigation > .main-navigation{
+	width: 100%;
+}
+
+ul#ast-hf-menu-1{
+	display: flex;
+	flex-wrap: nowrap !important;
+	justify-content: space-around;
+	width: 100%;
+
+}
+.ast-builder-grid-row > .site-header-primary-section-right{
+	width: 16%;
+}
+
+.ast-builder-menu-1 .menu-item.current-menu-item > .menu-link{
+	color: #ffffff !important;
+}
+.ast-desktop .ast-primary-header-bar .main-header-menu > .menu-item {
+	line-height: 28px;
+}
+
+
+.animate-nav-in > .site-primary-header-wrap > .ast-builder-grid-row  > .site-header-primary-section-right > .header-widget-area > #block-8 > .my-custom-switcher::before{
+	top: 15px;
+}
+/* ====================================================
+programas template
+==================================================== */
+.programa-price-page{
+	position: relative;
+}
+.programa-price-page::after {
+	content: "+IVA";
+	font-size: 20px;
+	font-family: Moranga;
+	font-weight: 300;
+	position: absolute;
+	left: 15%;
+	top: 42%;
+}
+h2.programs_page_subtitle{
+	text-align: center;
+	font-family: Moranga;
+	font-weight: 600;
+	font-size: 48px;
+	line-height: 48px;
+	letter-spacing: 0%;
+	text-align: center;
+	color: #5166EC;
+	width: 100%;
+}
+.row-cards{
+	background: #f9f8f5;
+}
+.row-cards,
+.sanasana-accordion-item{
+	transition: all 0.9s ease-in-out;
+	min-width: 1110px;
+} 
+
+.row-cards-active{
+	position: sticky;
+	top: 80px;
+	z-index: 1;
+	transition: top 0.9s ease;
+}
+.row-cards-active_1040{
+	position: sticky;
+	top: 60px;
+	z-index: 99;
+	transition: top 0.9s ease;
+}
+
+.row-cards
+{
+	display: flex;
+}
+.sanasana-accordion-item{
+	max-width: 100%;
+}
+/* ====================================================
+Accordion Transitions 
+==================================================== */
+div.sanasana-accordion-col-header {
+    min-width: 100%;
+    background: #EEF0FD;
+    text-align: left;
+    color: #5166EC;
+    font-size: 24px;
+    line-height: 32px;
+    font-family: Poppins, sans-serif;
+    font-weight: 600;
+    max-height: 64px;
+    padding: 0 16px;
+    min-height: 64px;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px -2px #0000001A;
+    box-shadow: 0 4px 6px -1px #0000001A;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+    border-radius: 12px;
+	position: relative;
+}
+
+h2.sanasana-accordion-header {
+    margin-bottom: 0;
+    margin-left: 16px;
+	font-family: Poppins, sans-serif !important;
+	font-weight: 500;
+	font-size: 20px;
+	line-height: 28px;
+	letter-spacing: 0%;
+	vertical-align: middle;
+	color: #5166EC;
+	min-width: fit-content;
+	cursor: pointer;
+}
+.sanasana-accordion-row-content {
+    display: flex;
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+	transition: all .7s ease;
+}
+.show-body {
+	visibility: visible;
+	opacity: 1;
+	height: fit-content;
+	transition: all .7s ease;
+}
+button.sanasana-accordion-button {
+    background: transparent;
+    width: 100%;
+    text-align: right;
+    box-shadow: none;
+	right: 20px;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+}
+button.sanasana-accordion-button:hover {
+	background: transparent;
+}
+.col.item-name {
+    padding: 10px 16px;
+    display: flex;
+    flex-wrap: wrap;
+	min-width: 406px;
+}
+.item-name-text {
+    width: 85%;
+    padding-right: 10px;
+	font-family: Poppins, sans-serif !important;
+	font-size: 16px;
+	line-height: 24px;
+	font-weight: 400;
+	
+}
+.col.item-info {
+    position: relative;
+	max-width: 50px;
+}
+
+.sanasana-accordion-row-content:nth-child(odd){
+	background: #FEFCEC;
+	border-radius: 10px;
+}
+
+.sanasana-accordion-row-content:nth-child(even){
+	background: #ffffff;
+	border-radius: 10px;
+}
+
+@keyframes expand {
+	0% {
+		max-height: 0;
+		opacity: 0;
+		visibility: hidden;
+	}
+	100% {
+		max-height: 500px; /* Ajusta según el contenido */
+		opacity: 1;
+		visibility: visible;
+	}
+}
+
+@keyframes collapse {
+	0% {
+		max-height: 500px; /* Ajusta según el contenido */
+		opacity: 1;
+		visibility: visible;
+	}
+	100% {
+		max-height: 0;
+		opacity: 0;
+		visibility: hidden;
+	}
+}
+
+.sanasana-accordion-body {
+	max-height: 0;
+	overflow: hidden;
+	visibility: hidden;
+	opacity: 0;
+	/*transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+				opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), 
+				visibility 0.6s cubic-bezier(0.4, 0, 0.2, 1);*/
+}
+
+.show-body > .sanasana-accordion-body {
+	max-height: 500px; /* Ajusta según el contenido */
+	opacity: 1;
+	visibility: visible;
+}
+
+
+.regular-arrow{
+	transform: rotate(0deg);
+	transition:  transform .9s;
+}
+.rotate-arrow{
+	transform: rotate(90deg);
+	transition:  transform .9s;
+}
+
+.sanasana-accordion-row:nth-child(odd){
+	background: #FEFCEC;
+	border-radius: 10px;
+}
+.row.sanasana-accordion-row:last-child {
+	margin-bottom: 10px;
+}
+.flex-container,
+.sanasana-accordion-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.sanasana-accordion-col-title {
+	font-size: 16px !important;
+	font-family: Poppins, sans-serif !important;
+	font-weight: 400;
+	line-height: 28px;
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	max-width: 430px;
+	min-width: 430px;
+}
+.sanasana-accordion-col-title > .item-name{
+	padding: 10px;
+	width: 85%;
+}
+.sanasana-accordion-col-title > .item-info{
+	width: 10%;
+	position: relative;
+	z-index: 10;
+}
+
+.item-info-icon > img {
+	min-width: 25px;
+	min-height: 25px;
+	max-width: 25px;
+	max-height: 25px;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	z-index: 0;
+}
+.item-name,
+.price-table-details-image{
+	width: 418px;
+	max-width: 418px;
+	min-width: 418px;
+}
+
+.program-item-text,
+.price-table-details-image{
+	left: 0;
+    background: #f9f8f5;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+}
+
+.program-item-text{
+	position: relative;
+}
+.sanasana-accordionPrograms-scroll {
+	padding-top: 20px;
+	/*transition: all 0.1s;  Especificamos 'all' para asegurarnos de que todas las propiedades con transición se apliquen */
+	position: static; /* Si quieres que se mantenga en flujo normal, está bien, pero si quieres que sea sticky, cámbialo a 'fixed' o 'absolute' */
+	top: 250px; /* Le faltaba el punto y coma */
+	left: 0;
+	right: 0;
+	z-index: 9;
+	background-color: #ffffff; /* Es más específico usar 'background-color' */
+	
+}
+.pair_button_container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.pair_button_container > div{
+	min-width: 180px;
+	min-height: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.pair_button_left > a,
+.pair_button_right > a{
+	font-family: Poppins, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+	min-width: 180px;
+	min-height: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-decoration: none !important;
+	border-radius: 5px;
+}
+.pair_button_left > a{
+	background: #5166ec;
+    border: 1px solid #455ae0;
+	color: #ffffff !important;
+}
+
+.pair_button_right > a{
+	background: #f9de42;
+    border: 1px solid #f9de42;
+	color: #000000 !important;
+}
+.pair_button_left_singular > a {
+    background: transparent;
+    border: solid 2px #5166ec;
+    color: #5166ec !important;
+}
+.pair_button_right_singular > a{
+	background: #f9de43;
+    color: #000000;
+}
+
+.sanasana-accordion-col-item {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	text-align: center;
+	width: 100%;
+	min-width: 195px;
+	max-width: 195px;
+	min-height: 310px;
+	padding: 0 10px 10px 10px;
+	margin: 0 2px;
+	border-left: solid 1px #5166EC;
+}
+.sanasana-accordion-col-item_programs{
+	min-height: fit-content !important;
+}
+.sanasana-accordion-col-item-scroll{
+	max-height: 300px !important;
+	min-height: 180px !important;
+	/*transition: max-height 0.3s ease-in-out;*/
+}
+.sanasana-accordion-col-item-details {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	text-align: center;
+	max-width: 210px;
+	min-width: 171px;
+	width: 171px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin: 0 2px;
+	border-left: solid 1px #5166EC;
+	min-height: 65px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.col.item-info-icon {
+	max-width: 50px;
+}
+.item-info-content {
+	position: absolute;
+	z-index: -10;
+	bottom: 65px;
+	left: 35%;
+	width: 490px;
+	height: 120px;
+	background: #FEFCEC;
+	border-radius: 20px;
+	border: solid 4px #F9DE42;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	height: fit-content;
+	padding: 20px;
+	font-family: Poppins, sans-serif !important;
+	font-size: 16px;
+	line-height: 24px;
+	font-weight: 400;
+	visibility: hidden;
+	opacity: 0;
+	transform: translateY(20px);
+	/*transition: transform .9s ease, opacity .9s ease, visibility .9s;*/
+}
+
+.item-info-content:hover,
+.item-info-icon:hover {
+	cursor: pointer;
+}
+
+.show-info {
+	visibility: visible;
+	opacity: 1;
+	transform: translateY(0);
+	z-index: 9999;
+}
+
+.sanasana-accordion-sanasana-collapse {
+	margin: 0 10px;
+}
+
+h2.sanasana-accordion-col-item_title {
+	font-size: 26px;
+	font-family: "Moranga Light", Verdana, Arial, sans-serif;
+	line-height: 119%;
+	font-weight: 400;
+	max-height: 52px;
+	min-height: 52px;
+	height: 52px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin: 10px 20px;
+}
+
+.accordion-body {
+	background: #ffffff;
+	position: relative;
+	z-index: 999;
+}
+.accordion-item {
+	border: none;
+	max-height: 65px;
+	margin-bottom: 10px;
+}
+.accordion-button{
+	background: #EEF0FD;
+	border-radius: 12px !important;
+	font-family: Poppins, sans-serif !important;
+	font-weight: 600 !important;
+	font-size: 24px !important;
+	line-height: 32px !important;
+	letter-spacing: 0%;
+	vertical-align: middle;
+	color: #5166EC !important;
+}
+.accordion-header{
+	margin-bottom: 5px !important;
+}
+.accordion-button:hover {
+	background: #EEF0FD;
+	color: #5166EC !important;
+}
+.accordion-button::after{
+	display: none;
+}
+.accordion-button > img{
+	position: absolute;
+	right: 30px;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	rotate: 0deg;
+	/*transition: rotate .7s;*/
+}
+.accordion-button:hover > img{
+	rotate: 90deg;
+	/*transition: rotate .7s;*/
+}
+.sanasana-accordion-col-item-check {
+	justify-content: center;
+	max-height: 500px !important;
+	min-height: 65px !important;
+}
+p.sanasana-accordion-col-item_description{
+	font-size: 14px;
+	font-family: Poppins, sans-serif;
+	line-height: 20px;
+	font-weight: 400;
+	max-height: 150px;
+	min-height: 150px;
+	height: 150px;
+	margin: 20px 0;
+}
+div.sanasana-accordion-col-item_price{
+	font-family: "Moranga Light", Verdana, Arial, sans-serif;
+	font-weight: 500;
+	font-size: 36px;
+	line-height: 40px;
+	letter-spacing: 0%;
+	text-align: center;
+	vertical-align: middle;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+div.sanasana-accordion-col-item_price > span{
+	font-family: "Moranga Light", Verdana, Arial, sans-serif;
+	font-weight: 300;
+	font-size: 20px;
+	line-height: 26px;
+	letter-spacing: 0%;
+	text-align: center;
+	vertical-align: middle;
+}
+p.sanasana-accordion-col-item_annual{
+	font-family: Poppins, sans-serif;
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 16px;
+	letter-spacing: 0%;
+	text-align: center;
+	color: #E84C5B;
+	margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+a.price-button-accordion{
+	max-width: 100%;
+	font-size: 16px;
+	padding: 0;
+}
+/* ====================================================
+Search button on programs page
+==================================================== */
+.search-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 40px;
+}
+input.search-input {
+	width: 610px;
+	height: 46px;
+	min-width: 116px;
+	min-height: 32px;
+	border-width: 2px;
+	padding-top: 4px;
+	padding-right: 6px;
+	padding-bottom: 4px;
+	padding-left: 15px;
+	border-radius: 12px;
+	position: relative;
+	max-width: 100%;
+}
+.search-input::placeholder {
+	color: #000; /* Cambia este color al que desees */
+	opacity: 1; /* Asegura que el color se vea bien en algunos navegadores */
+}
+.seach-button{
+	margin-left: -45px;
+	z-index: 10;
+}
+.seach-button:hover{
+	cursor: pointer;
+}
+
+#scroll-on-mobile-1{
+	background: #fefcec;
+	position: relative;
+	top: 0;
+}
+/*
+#scroll-on-mobile-1, #scroll-on-mobile-2 {
+	overflow-x: scroll;
+}
+	
+*/
+
+.scroll-on-mobile {
+	overflow-x: auto; /* Permite el desplazamiento horizontal */
+	overflow-y: hidden; /* Evita el desplazamiento vertical */
+	width: 100%;
+	border: none;
+	/* Oculta la barra de scroll */
+	scrollbar-width: none; /* Para Firefox */
+	-ms-overflow-style: none; /* Para Internet Explorer y Edge */
+}
+/* Fijación al hacer scroll */
+.scroll-on-mobile-1-fixed {
+	position: fixed !important;
+	top: 100px !important;
+	left: 0;
+	right: 0;
+	z-index: 99999;
+	width: 100%;
+}
+.scroll-on-mobile-1-fixed  > .fl-row-content-wrap{
+	max-height: 200px !important;
+}
+.scroll-on-mobile-accordion{
+	margin-top: 120px; /* Ajustar según la altura de las tarjetas */
+	/*transition: margin-top 0.3s ease-in-out;*/
+}
+
+
+.scroll-on-mobile-accordion::-webkit-scrollbar {
+	width: 8px; /* Ancho del scrollbar */
+}
+
+.scroll-on-mobile-accordion::-webkit-scrollbar-thumb {
+	background-color: #5166EC; /* Color del thumb */
+	border-radius: 4px;
+}
+
+.scroll-on-mobile-accordion::-webkit-scrollbar-thumb:hover {
+	background-color: #3B4FB6; /* Color al hacer hover */
+}
+
+.scroll-on-mobile-accordion::-webkit-scrollbar-track {
+	background-color: #EEF0FD; /* Fondo del track */
+	border-radius: 4px;
+}
+
+/* Para Chrome, Safari y Opera */
+.scroll-on-mobile::-webkit-scrollbar {
+	display: none;
+}
+
+/* ====================================================
+Nosotros 
+==================================================== */
+.sanasana-accordion-container-nosotros  {
+	min-width: 100% !important;
+	display: flex;
+	max-width: 100%;
+	overflow-x: scroll;
+}
+.sanasana-accordion-container-nosotros > .row {
+	overflow-x: scroll;
+	min-width: 1300px;
+	display: flex;
+	justify-content: flex-start !important;
+}
+.sanasana-accordion-col-item-nosotros{
+	min-width: 320px !important;
+	max-width: 320px !important;
+	padding: 20px;
+}
+.sanasana-accordion-col-item-nosotros > .sanasana-accordion-col-item_title{
+	font-size: 36px;
+	line-height: 40px;
+	margin-bottom: 15px;
+}
+.sanasana-accordion-col-item-nosotros > .sanasana-accordion-col-item_description{
+	font-size: 18px;
+	line-height: 20px;
+	margin: 20px;
+	min-height: fit-content !important;
+	max-height: fit-content;
+}
+.sanasana-accordion-col-item-nosotros > .sanasana-accordion-col-item_price,
+.sanasana-accordion-col-item-nosotros > .sanasana-accordion-col-item_price > div {
+	font-size: 72px;
+	margin: 10px 0;
+}
+
+.sanasana-accordion-col-item-nosotros > .sanasana-accordion-col-item_price > span {
+	font-size: 36px;
+}
+.sanasana-accordion-col-item-nosotros > .sanasana-accordion-col-item_annual{
+	font-size: 14px;
+	line-height: 20px;
+}
+/* ====================================================
+Programas 
+==================================================== */
+
+.searchNotification_visible{
+	visibility: visible !important;
+	opacity: 1 !important;
+	height: 50px !important;
+	/*transition: height .7s, opacity .7s, visibility .7s;*/
+}
+#searchNotification{
+	max-width: 617px;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 15px;
+	border: solid 2px red;
+	border-radius: 12px;
+	visibility: hidden;
+	opacity: 0;
+	height: 0;
+	/*transition: height .7s, opacity .7s, visibility .7s;*/
+	margin:auto;
+}
+
+button#resetButton {
+	margin-left: 40px;
+	height: 45px;
+	padding: 0 24px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 12px;
+}
+/* Elementos que desaparecen */
+.disappear {
+	opacity: 0;
+	visibility: hidden;
+	max-height: 0;
+	overflow: hidden;
+	padding: 0 !important;
+	margin: 0 !important;
+	height: 0 !important;
+	max-height: 0 !important;
+	min-height: 0 !important;
+	/*transition: all 0.9s ease-in-out;*/
+}
+
+/* Elementos visibles */
+.appear {
+	opacity: 1;
+	visibility: visible;
+	max-height: 1000px; /* Ajusta según necesidad */
+	/*transition: all 0.9s ease-in-out;*/
+}
+.disappearTitle{
+	margin-top: 12px;
+}
+
+
+button.accordion-button.collapsed {
+	background: #EEF0FD;
+}
+
+.dark_toggle{
+	fill: #000000 !important;
+}
+.program-ahorro-item:nth-child(odd){
+	background: #FEFCEC;
+	border-radius: 10px;
+}
+.col.program-title {
+	height: fit-content;
+	padding: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	min-height: 65px;
+}
+.col.program-item-icons {
+	min-height: 100%;
+	display: flex;
+}
+h3.sanasana-accordion-col-title {
+	margin-bottom: 0 !important;
+}
+
+ul.price-benefits > li,
+.program-ahorro-text,
+.program-ahorro-valor, 
+.program-benefit-title-container >h3.program-benefit-title-save{
+	min-width: 100px;
+	font-size: 18px;
+	line-height: 24px;
+	font-family: Poppins, sans-serif;
+}
+.program-benefit-title-container >h3.program-benefit-title-save,
+.program-ahorro-valor{
+	font-weight: 700;
+}
+
+
+/* ====================================================
+Preguntas frecuentes
+==================================================== */
+div#faq-home > .faq-tabs-wrapper > ul.faq-tabs-nav,
+#faq-home > .fl-module-content > .fl-html > .faq-search-wrapper{
+	display: none;
+}
+.faq-search-wrapper {
+	width: 100%;
+	max-width: 660px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	margin: auto;
+	margin-bottom: 50px;
+	background: #ffffff;
+	padding: 0 20px;
+	height: 45px;
+	align-items: center;
+	border: solid 2px #ABAAA6;
+	border-radius: 12px;
+}
+input#faq-search,
+button#faq-search-btn {
+	padding: 0;
+	background: transparent;
+	border: none;
+	margin: 0;
+	box-shadow: none;
+}
+
+.faq-suggestions-list {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	right: 0;
+	background: #fff;
+	border: 1px solid #ddd;
+	z-index: 1000;
+	max-height: 250px;
+	overflow-y: auto;
+	display: none;
+}
+.faq-suggestion-result {
+	padding: 10px;
+	cursor: pointer;
+}
+.faq-suggestion-result:hover {
+	background: #f0f0f0;
+}
+
+/* ====================================================
+Resenas
+==================================================== */
+.resena_item{
+	padding: 20px;
+	margin: 10px 0;
+	background-color: #f9de42;
+	border-radius: 8px;
+	max-height: 214px;
+}
+.resena_content > .fl-module-content > .fl-rich-text > p,
+.resena-modal-content > p{
+	font-family: Poppins, sans-serif;
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 28px;
+	text-align: center;
+	margin-bottom: 0 !important;
+}
+.resena_name > .fl-module-content{
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+.resena_name > .fl-module-content > .fl-rich-text > p{
+	color: #5166ec;
+	font-family: Poppins, sans-serif;
+	font-weight: 700;
+	font-size: 14px;
+	line-height: 20px;
+	text-align: center;
+}
+.resena-modal {
+	display: none;
+	position: fixed;
+	z-index: 9999;
+	top: 0; left: 0;
+	width: 100%; height: 100%;
+	background-color: rgba(0,0,0,0.8);
+}
+
+.resena-modal-content {
+	background-color: #ffeb3b;
+	padding: 30px;
+	width: 587px;
+	max-width: 600px;
+	border-radius: 10px;
+	color: #000;
+	position: relative;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	max-height: fit-content;
+}
+
+.resena-close {
+	position: absolute;
+	top: 5%;
+	right: 5%;
+}
+.resena-close:hover,
+.resena-ver-mas:hover{
+	cursor: pointer;
+}
+.resena-ver-mas{
+	color: #5166EC;
+	font-family: Poppins, sans-serif;
+	font-weight: 500;
+	font-size: 12px;
+	line-height: 16px;
+	letter-spacing: 0%;
+	text-align: center;
+	text-decoration: underline;
+	text-decoration-style: solid;
+	text-decoration-offset: 0%;
+	text-decoration-thickness: 0%;
+}
+
+.resena-modal-content_name{
+	font-family: Poppins;
+	font-weight: 700 !important;
+	font-size: 18px;
+	line-height: 28px;
+	letter-spacing: 0%;
+	text-align: center;
+	color: #5166EC;
+	margin-top: 30px;
+}
+
+.program-ahorros-wrapper {
+	background: #ffffff;
+	border-radius: 10px;
+	/*padding: 20px;*/
+	margin: 0 20px;
+}
+.program-benefit-title-container{
+	align-items: center;
+}
+.program-benefit-title-container,
+.program-ahorros-wrapper> .program-ahorros-list > .program-ahorro-item {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 20px;
+	
+}
+.program-benefit-title-container > .program-benefit-title,
+.program-ahorros-wrapper> .program-ahorros-list > .program-ahorro-item > .program-ahorro-text {
+	width: 80%;
+	text-align: left;
+}
+.program-benefit-title-container >.program-benefit-title-save,
+.program-ahorros-wrapper> .program-ahorros-list > .program-ahorro-item > .program-ahorro-valor {
+	width: 20%;
+	padding-left: 5%;
+}
+
+/* ====================================================
+Media Queries
+==================================================== */
+@media(max-width: 1498px){
+	.item-name,
+	.program-item-text,
+	.price-table-details-image{
+		width: 100%;
+		display: flex;
+	}
+}
+@media(min-width: 1228px) and (max-width: 1300px){
+	.ingresa-menu-button {
+		width: 180px !important;
+	}
+}
+@media(min-width: 1240px) and (max-width: 1439px){
+	.col.item-name,
+	.price-table-details-image{
+		max-width: 312px;
+		min-width: 300px;
+	}
+
+	.sanasana-accordion-col-item{
+		width: 170px !important;
+		min-width: 170px !important;
+		max-width: 170px !important;
+	}
+	.sanasana-accordion-item,
+	.sanasana-accordion-row-content{
+		max-width: 1170px;
+	}
+}
+@media(min-width: 1189px) and (max-width: 1239px){
+	.col.item-name,
+	.price-table-details-image{
+		max-width: 262px;
+		min-width: 250px;
+	}
+	.col.item-name {
+		max-width: 250px;
+	}
+	.sanasana-accordion-col-item{
+		width: 170px !important;
+		min-width: 170px !important;
+		max-width: 170px !important;
+	}
+	.sanasana-accordion-item,
+	.sanasana-accordion-row-content{
+		max-width: 1125px;
+	}
+}
+
+@media(min-width: 1100px) and (max-width: 1188px){
+	.col.item-name,
+	.price-table-details-image{
+		max-width: 262px;
+		min-width: 250px;
+	}
+	.col.item-name {
+		max-width: 250px;
+		min-width: 243px;
+	}
+	.sanasana-accordion-col-item{
+		width: 170px !important;
+		min-width: 170px !important;
+		max-width: 170px !important;
+	}
+	.sanasana-accordion-item,
+	.sanasana-accordion-row-content{
+		max-width: 1125px;
+	}
+}
+
+@media(max-width: 1040px){
+	p.sanasana-accordion-col-item_annual{
+		display: none;
+	}
+	h2.sanasana-accordion-col-item_title {
+		margin-bottom: 5px !important;
+	}
+	span.discount {
+		text-align: center;
+		margin-top: 10px;
+	}
+	.row-cards_active_responsive {
+		position: fixed !important;
+		z-index: 99;
+		top: 80px;
+		left: 55px;
+		display: flex;
+	} 
+	#ast-mobile-header > .ast-main-header-wrap > .animate-nav-in > .ast-builder-grid-row > .site-header-primary-section-right > .ast-header-html-1 > .ast-header-html > .ast-builder-html-element > .ingresa-menu-button> a.custom-menu-button-link{
+		background: #F9DE42 !important;
+		color: #000000 !important;
+	}
+	.col.item-name,
+	.price-table-details-image{
+		max-width: 215px;
+		min-width: 215px;
+	}
+	.col.item-name {
+		max-width: 215;
+		min-width: 215px;
+	}
+	.sanasana-accordion-col-item{
+		width: 170px !important;
+		min-width: 170px !important;
+		max-width: 170px !important;
+	}
+	.sanasana-accordion-item,
+	.sanasana-accordion-row-content{
+		max-width: 1125px;
+	}
+
+	.program-benefit-title{
+		padding: 15px 15px 0px 0px;
+	}
+	/************************
+	 * Programs
+	 * **********************/
+	
+	.program-item-text,
+	.price-table-details-image{
+		position: sticky;
+	}
+	
+	.price-table-details-image,
+	.sanasana-accordion-row-content:nth-child(odd) > .item-name{
+		margin: 0;
+		position: sticky;
+		left: 0;
+		z-index: 0;
+		min-width: 215px;
+		max-width: 215px;
+		width: 215px;
+	}
+	.sanasana-accordion-row-content:nth-child(odd) > .item-name{
+		background: #FEFCEC;
+	}
+	.sanasana-accordion-row-content:nth-child(even) > .item-name{
+		background: #ffffff;
+		margin: 0;
+		position: sticky;
+		left: 0;
+		z-index: 0;
+		min-width: 215px;
+		max-width: 215px;
+		width: 215px;
+	}
+	.flex-container-wrapper {
+		overflow-x: scroll;
+		overflow-y: hidden;
+		width: 100%;
+	}
+	div.sanasana-accordion-col-header {
+		padding: 0;
+	}
+	h2.programs_page_subtitle,
+	h2.sanasana-accordion-col-item_title{
+		font-size: 24px;
+	}
+	div.sanasana-accordion-col-item_price{
+		font-size: 22px;
+	}
+	
+	h2.sanasana-accordion-header{
+		position: sticky;
+		left: 0;
+		z-index: 1;
+		font-size: 20px;
+		font-weight: 500;
+	}
+	
+}
+@media(max-width: 775px){
+	.program-benefit-title{
+		font-size: 26px;
+		line-height: 40px;
+	}
+	.program-benefit-title{
+		width: 100% !important;
+	}
+	.program-ahorros-wrapper> .program-ahorros-list > .program-ahorro-item > .program-ahorro-text {
+		width: 75%;
+		line-height: 20px;
+	}
+	.program-ahorros-wrapper> .program-ahorros-list > .program-ahorro-item > .program-ahorro-valor {
+		width: 25%;
+		padding-left: 5%;
+		line-height: 20px;
+	}
+	.col.item-name,
+	.price-table-details-image{
+		max-width: 262px;
+		min-width: 250px;
+	}
+	.col.item-name {
+		max-width: 250px;
+		min-width: 243px;
+	}
+	.sanasana-accordion-col-item{
+		width: 170px !important;
+		min-width: 170px !important;
+		max-width: 170px !important;
+	}
+	.sanasana-accordion-item,
+	.sanasana-accordion-row-content{
+		max-width: 1125px;
+	}
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+
+	.price-container {
+		flex-direction: row;
+	}
+	.price-card {
+		width: 308px !important;
+		min-width: 308px;
+		max-width: 308px;
+	}
+	.price-title {
+		font-size: 24px;
+	}
+	.price-benefits li {
+		font-size: 12.91px;
+	}
+	.price-value{
+		font-size: 66.6px;
+		line-height: 66.6px;
+	} 
+	.price-value > span{
+		font-size: 33.3px;
+		line-height: 37px;
+	}
+	.price-benefits li {
+		font-size: 12.95px;
+		line-height: 18.5px;
+	}
+	.col.item-name,
+	.price-table-details-image{
+		max-width: 215px;
+		min-width: 215px;
+	}
+	.col.item-name {
+		max-width: 215px;
+		min-width: 215px;
+	}
+	.sanasana-accordion-col-item{
+		width: 170px !important;
+		min-width: 170px !important;
+		max-width: 170px !important;
+	}
+	.sanasana-accordion-item,
+	.sanasana-accordion-row-content{
+		max-width: 1125px;
+	}
+}
+
+@media (max-width: 768px) {
+	.pair_button_container {
+    	flex-direction: column;
+	}
+	.row-cards_active_responsive {
+		left: 0px;
+	}
+	/*Nav menu responsive*/
+	.animate-nav-in > .ast-builder-grid-row > .site-header-primary-section-right > .ast-builder-layout-element > .ast-button-wrap > .menu-toggle > .mobile-menu-toggle-icon > span > .ast-mobile-svg{
+		fill: #ffffff;
+	}
+
+	.animate-nav-in > .ast-builder-grid-row > .site-header-primary-section-right > .ast-header-html-1 > .ast-header-html > .ast-builder-html-element .custom-menu-button > a.custom-menu-button-link {
+		background: #f9de43 !important;
+		color: #000000 !important;
+		width: 100px;
+		height: 32px;
+	}
+	/*Resenas*/
+	.resena_item{
+		max-height: fit-content;
+	}
+	.resena-modal-content p {
+		font-size: 14px;
+		line-height: 20px;
+	}
+	.resena-modal-content {
+		width: 100%;
+		max-width: 90%;
+		left: 20px;
+		right: 20px;
+		max-height: fit-content;
+		overflow: scroll;
+	}
+	/**/
+	.price-container-nosotros {
+		flex-direction: row !important;
+        justify-content: flex-start !important;
+	}
+	.price-container {
+		display: flex;
+		gap: 20px;
+		width: 100%;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		min-width: 100%;
+	}
+	.price-card,
+	.discount {
+		width: 358px;
+		justify-content: center;
+	}
+	.price-card-nosotros {
+        min-width: 208px;
+		min-height: 400px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		
+    }
+	a.price-button.price-button-nosotros {
+		width: 100%;
+		line-height: 1;
+		margin: 0;
+	}
+	.price-value {
+		font-size: 50px;
+	}
+	p.price-decription{
+		margin-bottom: 0;
+    margin-top: 20px;
+	}
+	.price-value > span{
+		font-size: 20px;
+	}
+	.price-title {
+		line-height: 119%;
+		font-size: 26px;
+	}
+	.discount{
+		display: inline-block;
+	  max-width: 215px; /* Ajusta según necesidad */
+	  white-space: normal;
+	  word-break: break-word;
+	}
+	
+	.toggle-container {
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+	span.discount {
+		text-align: center;
+	}
+	.price-prev,
+	.price-next {
+		display: none;
+	}
+	.price-prev-nosotros,
+	.price-next-nosotros {
+		display: block;
+	}
+	/* Detalle para .price-list-details en móviles (styles.css) */
+	
+	.price-list-details li {
+		font-size: 14px !important;
+		line-height: 20px !important;
+	}
+	.row-cards{
+		min-width: 1120px;
+		
+	}
+	.sanasana-accordion-col-title,
+	.col.price-table-details-image {
+        max-width: 215px;
+        min-width: 215px;
+        width: 215px;
+       
+    }
+	.col.price-table-details-image {
+		border-right: solid 1px #5167ec;
+	}
+	.scroll-on-mobile-1-fixed {
+		top: 75px !important;
+	}
+
+	.sanasana-accordion-button{
+		font-size: 20px !important;
+	}
+	.sanasana-accordion-col-title > .item-name{
+		font-size: 14px;
+		line-height: 20px;
+	}
+	.sanasana-accordion-col-title > .item-info > .item-info-icon > img{
+		width: 24px !important;
+		height: 24px !important;
+		min-width: 24px !important;
+		min-height: 24px !important;
+	}
+	.item-info-content {
+		left: 45px;
+        right: 0;
+        width: 190px;
+        height: fit-content;
+        border-radius: 20px;
+        font-size: 14px;
+        line-height: 1.5;
+        z-index: 99;
+        bottom: -50px;
+        top: 0;
+        padding: 10px;
+	}
+	.sanasana-accordion-col-item-check > img{
+		width: 31px !important;
+		height: 24px !important;
+	}
+	/*Programs*/
+	
+	h2.programs_page_subtitle {
+		font-size: 36px;
+		line-height: 40px;
+	}
+	.sanasana-accordion-col-title > .item-info{
+		display: flex;
+		width: 14%;
+	}
+	.program-benefit-block {
+		background: #ffffff;
+		padding: 20px 20px 30px 20px;
+		margin: 5px 0;
+		border-radius: 10px;
+	}
+	.program-benefit-block > ul.price-benefits > li,
+	.program-ahorro-item > .program-ahorro-text,
+	.program-ahorro-item > .program-ahorro-valor{
+		font-size: 14px;
+	}
+	.program-item-text, .price-table-details-image{
+		max-width: 205px;
+		min-width: 205px;
+		width: 205px;
+	}
+	h3.sanasana-accordion-col-title {
+		margin-bottom: 0 !important;
+		font-size: 14px !important;
+		min-width: 165px;
+	}
+	
+	.item-info-icon > img {
+		min-width: 24px;
+		min-height: 24px;
+		max-width: 24px;
+		max-height: 24px;
+		margin: 0;
+	}
+	button.accordion-button {
+		font-size: 20px !important;
+	}
+	.program-item-text > row{
+		display: flex;
+		flex-wrap: wrap;
+	}
+	
+	.program-title{
+		width: 75%;
+	}
+	.item-info-icon{
+		width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding-right: 5px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+	}
+	.item-info-icon > img{
+		position: relative;
+	}
+	.col.item-name,
+	.price-table-details-image{
+		max-width: 215px;
+		min-width: 215px;
+	}
+	.col.item-name {
+		max-width: 215px;
+		min-width: 215px;
+	}
+	.sanasana-accordion-col-item{
+		width: 170px !important;
+		min-width: 170px !important;
+		max-width: 170px !important;
+	}
+	.sanasana-accordion-item,
+	.sanasana-accordion-row-content{
+		max-width: 900px;
+	}
+	.price-benefits li {
+	text-align: left;
+	color: #000;
+	font-family: Poppins, sans-serif;
+	font-size: 16px !important;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 20px;
+	display: flex;
+	align-items: flex-start;
+	gap: 8px;
+	margin-bottom: 10px;
+}
+	.resena_content > .fl-module-content > .fl-rich-text > p,
+.resena-modal-content > p{
+	font-family: Poppins, sans-serif;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 28px;
+	text-align: center;
+	margin-bottom: 0 !important;
+}
+}
+@media (max-width: 519px) {
+	.program-benefit-title-container{
+		flex-direction: row;
+		flex-wrap: nowrap;
+	}
+	.program-benefit-title {
+        width: 100% !important;
+    }
+	.program-benefit-title-save,
+	.program-ahorro-valor {
+    	display: flex;
+		justify-content: flex-end;
+		align-items: center;
+	}
+	
+	.program-ahorros-wrapper> .program-ahorros-list > .program-ahorro-item > .program-ahorro-text {
+		width: 72%;
+	}
+	.col.item-name,
+	.price-table-details-image{
+		max-width: 215px;
+		min-width: 215px;
+	}
+	.col.item-name {
+		max-width: 215px;
+		min-width: 215px;
+	}
+	.sanasana-accordion-col-item{
+		width: 170px !important;
+		min-width: 170px !important;
+		max-width: 170px !important;
+	}
+	.sanasana-accordion-item,
+	.sanasana-accordion-row-content{
+		max-width: 900px;
+	}
+	.ingresa-menu-button {
+		width: 100px !important;
+		height: 32px !important;
+	}
+	.ast-header-html-1 > .ast-header-html > .ast-builder-html-element .custom-menu-button > a.custom-menu-button-link {
+		width: 100%;
+		height: 100%;
+		font-size: 14px !important;
+	}
+}
+@media (max-width: 477px) {
+	.program-ahorros-wrapper> .program-ahorros-list > .program-ahorro-item > .program-ahorro-text {
+		width: 70%;
+	}
+	.col.item-name,
+	.price-table-details-image{
+		max-width: 215px;
+		min-width: 215px;
+	}
+	.col.item-name {
+		max-width: 215px;
+		min-width: 215px;
+	}
+	.sanasana-accordion-col-item{
+		width: 170px !important;
+		min-width: 170px !important;
+		max-width: 170px !important;
+	}
+	.sanasana-accordion-item,
+	.sanasana-accordion-row-content{
+		max-width: 900px;
+	}
+}
+@media (max-width: 453px) {
+	.program-ahorros-wrapper> .program-ahorros-list > .program-ahorro-item > .program-ahorro-text {
+		width: 68%;
+	}
+	.program-ahorros-wrapper> .program-ahorros-list > .program-ahorro-item > .program-ahorro-valor {
+		width: 20%;
+		padding-left: 5%;
+	}
+	.col.item-name,
+	.price-table-details-image{
+		max-width: 215px;
+		min-width: 215px;
+	}
+	.col.item-name {
+		max-width: 215px;
+		min-width: 215px;
+	}
+	.sanasana-accordion-col-item{
+		width: 170px !important;
+		min-width: 170px !important;
+		max-width: 170px !important;
+	}
+	.sanasana-accordion-item,
+	.sanasana-accordion-row-content{
+		max-width: 900px;
+	}
+}
+@media (max-width: 432px) {
+	.program-ahorros-wrapper> .program-ahorros-list > .program-ahorro-item > .program-ahorro-text {
+		width: 66%;
+	}
+	.col.item-name,
+	.price-table-details-image{
+		max-width: 215px;
+		min-width: 215px;
+	}
+	.col.item-name {
+		max-width: 215px;
+		min-width: 215px;
+	}
+	.sanasana-accordion-col-item{
+		width: 170px !important;
+		min-width: 170px !important;
+		max-width: 170px !important;
+	}
+	.sanasana-accordion-item,
+	.sanasana-accordion-row-content{
+		max-width: 900px;
+	}
+}
+
+@media(max-width: 414px){
+	
+	/* ====================================================
+Nosotros 
+==================================================== */
+	.sanasana-accordion-container-nosotros > .row {
+		min-width: 845px;
+	}
+	.sanasana-accordion-col-item-nosotros{
+		min-width: 207px !important;
+		max-width: 207px !important;
+		padding: 10px;
+	}
+	.sanasana-accordion-col-item-nosotros > .sanasana-accordion-col-item_title{
+		font-size: 26px;
+		line-height: 36px;
+		font-weight: 400;
+	}
+	.sanasana-accordion-col-item-nosotros > .sanasana-accordion-col-item_description{
+		font-size: 16px;
+		line-height: 24px;
+		margin: 10px 5px;
+		min-height: 170px !important;
+	}
+	.sanasana-accordion-col-item-nosotros > .sanasana-accordion-col-item_price,
+	.sanasana-accordion-col-item-nosotros > .sanasana-accordion-col-item_price > div {
+		font-size: 36px;
+		margin: 10px 0;
+	}
+
+	.sanasana-accordion-col-item-nosotros > .sanasana-accordion-col-item_price > span {
+		font-size: 20px;
+		margin: 0;
+	}
+	.sanasana-accordion-col-item-nosotros > .sanasana-accordion-col-item_annual{
+		font-size: 12px;
+		line-height: 20px;
+		margin-bottom: 0;
+	}
+	.program-ahorros-wrapper> .program-ahorros-list > .program-ahorro-item > .program-ahorro-text {
+		width: 64%;
+	}
+	.col.item-name,
+	.price-table-details-image{
+		max-width: 215px;
+		min-width: 215px;
+	}
+	.col.item-name {
+		max-width: 215px;
+		min-width: 215px;
+	}
+	.sanasana-accordion-col-item{
+		width: 170px !important;
+		min-width: 170px !important;
+		max-width: 170px !important;
+	}
+	.sanasana-accordion-item,
+	.sanasana-accordion-row-content{
+		max-width: 900px;
+	}
+}
+@media (max-width: 397px) {
+	.program-ahorros-wrapper> .program-ahorros-list > .program-ahorro-item > .program-ahorro-text {
+		width: 62%;
+	}
+	.program-ahorros-wrapper> .program-ahorros-list > .program-ahorro-item > .program-ahorro-valor {
+		width: 18%;
+		padding-left: 5%;
+	}
+	.col.item-name,
+	.price-table-details-image{
+		max-width: 215x;
+		min-width: 215px;
+	}
+	.col.item-name {
+		max-width: 215px;
+		min-width: 215px;
+	}
+	.sanasana-accordion-col-item{
+		width: 170px !important;
+		min-width: 170px !important;
+		max-width: 170px !important;
+	}
+	.sanasana-accordion-item,
+	.sanasana-accordion-row-content{
+		max-width: 900px;
+	}
+}
+@media (max-width: 383px) {
+	.program-ahorros-wrapper> .program-ahorros-list > .program-ahorro-item > .program-ahorro-text {
+		width: 60%;
+	}
+	.col.item-name,
+	.price-table-details-image{
+		max-width: 215px;
+		min-width: 215px;
+	}
+	.col.item-name {
+		max-width: 215px;
+		min-width: 215px;
+	}
+	.sanasana-accordion-col-item{
+		width: 170px !important;
+		min-width: 170px !important;
+		max-width: 170px !important;
+	}
+	.sanasana-accordion-item,
+	.sanasana-accordion-row-content{
+		max-width: 900px;
+	}
+}
+
+.affiliate-single-redirection-button-container{
+	width: 100%;
+	display: flex;
+    justify-content: center;	
+}
+
+.affiliate-plan-details-top-button-container{
+	width: 100%;
+	display: flex;
+    justify-content: left;	
+}
+
+.affiliate-plan-details-top-button-container a.price-button{
+	color: #000000 !important;
+}
+
+.affiliate-footer-button-container{
+	width: 100%;
+	display: flex;
+    justify-content: left;		
+}
+
+.affiliate-footer-button-container a.price-button{
+	color: #000000 !important;
+}
+

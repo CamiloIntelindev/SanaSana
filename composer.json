@@ -1,0 +1,19 @@
+{
+    "name": "camilocontreras/sanasana",
+    "description": "Sanasana custom plugin",
+    "type": "project",
+    "license": "GPL-2.0-or-later",
+    "autoload": {
+        "psr-4": {
+            "SanasanaInit\\": "inc/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Intelindev team",
+            "email": "info@intelindev.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}

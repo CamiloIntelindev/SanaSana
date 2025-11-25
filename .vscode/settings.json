@@ -1,0 +1,14 @@
+{
+    "files.exclude": {
+        "**/.DS_Store": true,
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.idea": true,
+        "**/.vscode": true
+    },
+    "files.exclude": {
+        "**/.htaccess": false
+    }
+}

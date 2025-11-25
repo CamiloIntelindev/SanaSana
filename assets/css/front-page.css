@@ -1,0 +1,8 @@
+/*Hero section*/
+.hero-container-button{
+	display: flex;
+	gap: 20px;
+	justify-content: flex-start;
+	align-items: center;
+	flex-wrap: wrap;
+}
